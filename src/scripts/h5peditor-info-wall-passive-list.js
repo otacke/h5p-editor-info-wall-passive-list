@@ -26,6 +26,9 @@ export default class InfoWallPassiveList {
     });
   }
 
+  /**
+   * Get all items.
+   */
   getItems() {
     const items = [];
     this.list.forEachChild(child => {
@@ -35,6 +38,9 @@ export default class InfoWallPassiveList {
     return items;
   }
 
+  /**
+   * Update the list DOM.
+   */
   updateDOM() {
     this.$container.get(0).innerHTML = '';
     this.getItems().forEach(item => {
