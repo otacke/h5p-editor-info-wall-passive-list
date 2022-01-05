@@ -1,6 +1,4 @@
-import './h5peditor-info-wall-passive-list.scss';
-
-/** Class for Boilerplate H5P widget */
+/** Class for Passive List Widget */
 export default class InfoWallPassiveList {
 
   /**
