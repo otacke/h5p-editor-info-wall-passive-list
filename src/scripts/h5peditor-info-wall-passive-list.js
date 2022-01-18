@@ -45,7 +45,7 @@ export default class InfoWallPassiveList {
     this.$container.get(0).innerHTML = '';
     this.getItems().forEach(item => {
       item.appendTo(this.$container);
-      item.$item.get(0).querySelector('.h5peditor-label').innerText = he.decode(item.infoWallLabel);
+      item.$item.get(0).querySelector('.h5peditor-label').innerText = he.decode(item.infoWallLabel || '');
     });
   }
 
