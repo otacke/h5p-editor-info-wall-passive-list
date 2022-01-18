@@ -1,3 +1,5 @@
+import he from "he";
+
 /** Class for Passive List Widget */
 export default class InfoWallPassiveList {
 
@@ -43,7 +45,7 @@ export default class InfoWallPassiveList {
     this.$container.get(0).innerHTML = '';
     this.getItems().forEach(item => {
       item.appendTo(this.$container);
-      item.$item.get(0).querySelector('.h5peditor-label').innerText = item.infoWallLabel;
+      item.$item.get(0).querySelector('.h5peditor-label').innerText = he.decode(item.infoWallLabel);
     });
   }
 
