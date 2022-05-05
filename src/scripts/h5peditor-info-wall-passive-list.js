@@ -19,11 +19,6 @@ export default class InfoWallPassiveList {
     // Once all items have been added we toggle the state of the order buttons
     list.once('changeWidget', () => {
       this.updateLabels();
-      // TODO - do we need to do anything more here?
-    });
-
-    list.on('removedItem', () => {
-      // TODO - do we need to do anything here?
     });
   }
 
