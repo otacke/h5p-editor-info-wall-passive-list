@@ -18,11 +18,7 @@ export default class InfoWallPassiveList {
 
     // Once all items have been added we toggle the state of the order buttons
     list.once('changeWidget', () => {
-      this.updateDOM();
-    });
-
-    list.on('removedItem', () => {
-      this.updateDOM();
+      this.updateLabels();
     });
   }
 
@@ -39,22 +35,31 @@ export default class InfoWallPassiveList {
   }
 
   /**
-   * Update the list DOM.
+   * Add UI item to the widget.
+   * @param {object} item Item.
    */
-  updateDOM() {
-    this.$container.get(0).innerHTML = '';
-    this.getItems().forEach(item => {
-      item.appendTo(this.$container);
-      item.$item.get(0).querySelector('.h5peditor-label').innerText = he.decode(item.infoWallLabel || '');
+  addItem(item) {
+    item.appendTo(this.$container);
+    item.$item.get(0).querySelector('.h5peditor-label').innerText = he.decode(item.infoWallLabel || '');
+  }
+
+  /**
+   * Update order of items
+   */
+  updateOrder() {
+    this.list.forEachChild(item => {
+      item.remove();
+      this.addItem(item);
     });
   }
 
   /**
-   * Add UI item to the widget.
-   * @param {object} item Item.
+   * Update the labels for each item
    */
-  addItem() {
-    this.updateDOM();
+  updateLabels() {
+    this.list.forEachChild(item => {
+      item.$item.get(0).querySelector('.h5peditor-label').innerText = he.decode(item.infoWallLabel || '');
+    });
   }
 
   /**
