@@ -1,10 +1,10 @@
-import he from "he";
+import he from 'he';
 
 /** Class for Passive List Widget */
 export default class InfoWallPassiveList {
 
   /**
-   * @constructor
+   * @class
    * @param {H5PEditor.List} list List.
    */
   constructor(list) {
@@ -24,10 +24,11 @@ export default class InfoWallPassiveList {
 
   /**
    * Get all items.
+   * @returns {object[]} Items.
    */
   getItems() {
     const items = [];
-    this.list.forEachChild(child => {
+    this.list.forEachChild((child) => {
       items.push(child);
     });
 
@@ -40,14 +41,18 @@ export default class InfoWallPassiveList {
    */
   addItem(item) {
     item.appendTo(this.$container);
-    item.$item.get(0).querySelector('.h5peditor-label').innerText = he.decode(item.infoWallLabel || '');
+
+    const label = item.$item.get(0).querySelector('.h5peditor-label');
+    if (label) {
+      label.innerText = he.decode(item.infoWallLabel || '');
+    }
   }
 
   /**
    * Update order of items
    */
   updateOrder() {
-    this.list.forEachChild(item => {
+    this.list.forEachChild((item) => {
       item.remove();
       this.addItem(item);
     });
@@ -57,8 +62,11 @@ export default class InfoWallPassiveList {
    * Update the labels for each item
    */
   updateLabels() {
-    this.list.forEachChild(item => {
-      item.$item.get(0).querySelector('.h5peditor-label').innerText = he.decode(item.infoWallLabel || '');
+    this.list.forEachChild((item) => {
+      const label = item.$item.get(0).querySelector('.h5peditor-label');
+      if (label) {
+        label.innerText = he.decode(item.infoWallLabel || '');
+      }
     });
   }
 
