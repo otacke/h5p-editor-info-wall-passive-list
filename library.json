@@ -12,7 +12,7 @@
   "author": "Oliver Tacke",
   "preloadedJs": [
     {
-      "path": "dist/h5peditor-info-wall-passive-list.js"
+      "path": "dist/h5p-editor-info-wall-passive-list.js"
     }
   ]
 }
