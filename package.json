@@ -1,6 +1,6 @@
 {
   "name": "h5p-editor-info-wall-passive-list",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Info wall passive list widget",
   "private": true,
   "scripts": {
