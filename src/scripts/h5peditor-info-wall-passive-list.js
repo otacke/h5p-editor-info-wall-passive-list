@@ -13,7 +13,7 @@ export default class InfoWallPassiveList {
 
     // DOM
     this.$container = H5P.jQuery('<div>', {
-      class: 'h5peditor-info-wall-passive-list'
+      class: 'h5peditor-info-wall-passive-list',
     });
 
     // Once all items have been added we toggle the state of the order buttons
