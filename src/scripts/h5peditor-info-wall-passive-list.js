@@ -1,4 +1,4 @@
-import he from 'he';
+import { decode } from 'he';
 
 /** Class for Passive List Widget */
 export default class InfoWallPassiveList {
@@ -44,7 +44,7 @@ export default class InfoWallPassiveList {
 
     const label = item.$item.get(0).querySelector('.h5peditor-label');
     if (label) {
-      label.innerText = he.decode(item.infoWallLabel || '');
+      label.innerText = decode(item.infoWallLabel || '');
     }
   }
 
@@ -65,7 +65,7 @@ export default class InfoWallPassiveList {
     this.list.forEachChild((item) => {
       const label = item.$item.get(0).querySelector('.h5peditor-label');
       if (label) {
-        label.innerText = he.decode(item.infoWallLabel || '');
+        label.innerText = decode(item.infoWallLabel || '');
       }
     });
   }
